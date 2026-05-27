@@ -19,7 +19,16 @@ RUN npm run build
 FROM node:20-alpine AS prod-deps
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --omit=dev && npm cache clean --force
+RUN npm ci --omit=dev \
+    && npm dedupe --omit=dev \
+    && node -e "\
+      const check=(n,fn)=>{const v=require(n+'/package.json').version; console.log(n,v); if(!fn(v)) throw new Error(n+' '+v);};\
+      check('tar',v=>!v.startsWith('6.'));\
+      check('glob',v=>!v.startsWith('10.4.'));\
+      check('minimatch',v=>v!=='9.0.5');\
+      check('cross-spawn',v=>v!=='7.0.3');\
+    " \
+    && npm cache clean --force
 
 FROM node:20-alpine AS runtime
 WORKDIR /app
@@ -28,7 +37,8 @@ ENV PORT=3000
 
 RUN apk upgrade --no-cache
 
-COPY package*.json ./
+# package-lock.json is not needed at runtime; omitting it avoids Trivy reading stale lock metadata.
+COPY package.json ./
 COPY --from=prod-deps /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 

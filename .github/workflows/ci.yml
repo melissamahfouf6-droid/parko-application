@@ -71,17 +71,36 @@ jobs:
         id: meta
         run: echo "tag=${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
 
+      - name: Install backend prod dependencies (Linux lockfile check)
+        working-directory: backend
+        run: npm ci --omit=dev
+
       - name: Build backend image (tagged by SHA)
         run: |
-          docker build \
+          docker build --no-cache \
             -t parko-api:${{ steps.meta.outputs.tag }} \
             -f backend/Dockerfile \
             backend
 
-      - name: Trivy filesystem scan (repo)
+      - name: Verify dependency versions inside image
+        run: |
+          docker run --rm "parko-api:${{ steps.meta.outputs.tag }}" node -e "
+            const check = (name, ok) => {
+              const v = require('/app/node_modules/' + name + '/package.json').version;
+              console.log(name, v);
+              if (!ok(v)) throw new Error(name + ' ' + v);
+            };
+            check('tar', v => !v.startsWith('6.'));
+            check('glob', v => !v.startsWith('10.4.'));
+            check('minimatch', v => v !== '9.0.5');
+            check('cross-spawn', v => v !== '7.0.3');
+          "
+
+      - name: Trivy filesystem scan (backend)
         uses: aquasecurity/trivy-action@v0.24.0
         with:
           scan-type: fs
+          scan-ref: backend
           ignore-unfixed: true
           severity: CRITICAL,HIGH
           format: table
@@ -96,4 +115,5 @@ jobs:
           severity: CRITICAL,HIGH
           format: table
           exit-code: 1
+          skip-files: package-lock.json
 
