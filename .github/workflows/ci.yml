@@ -79,7 +79,7 @@ jobs:
             backend
 
       - name: Trivy filesystem scan (repo)
-        uses: aquasecurity/trivy-action@v0.28.0
+        uses: aquasecurity/trivy-action@v0.24.0
         with:
           scan-type: fs
           ignore-unfixed: true
@@ -88,7 +88,7 @@ jobs:
           exit-code: 1
 
       - name: Trivy image scan (backend)
-        uses: aquasecurity/trivy-action@v0.28.0
+        uses: aquasecurity/trivy-action@v0.24.0
         with:
           image-ref: parko-api:${{ steps.meta.outputs.tag }}
           vuln-type: os,library
