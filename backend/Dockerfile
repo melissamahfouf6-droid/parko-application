@@ -22,6 +22,7 @@ COPY package*.json ./
 COPY scripts/strip-package-json-deps.js scripts/strip-package-json-deps.js
 RUN npm ci --omit=dev \
     && npm dedupe --omit=dev \
+    && find node_modules -type d -name node_modules -prune -exec rm -rf '{}' + \
     && node scripts/strip-package-json-deps.js \
     && node -e "\
       const check=(n,fn)=>{const v=require(n+'/package.json').version; console.log(n,v); if(!fn(v)) throw new Error(n+' '+v);};\
