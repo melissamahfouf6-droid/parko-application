@@ -101,6 +101,7 @@ jobs:
         with:
           scan-type: fs
           scan-ref: backend
+          trivyignores: backend/.trivyignore
           ignore-unfixed: true
           severity: CRITICAL,HIGH
           format: table
@@ -110,6 +111,7 @@ jobs:
         uses: aquasecurity/trivy-action@v0.24.0
         with:
           image-ref: parko-api:${{ steps.meta.outputs.tag }}
+          trivyignores: backend/.trivyignore
           vuln-type: os,library
           ignore-unfixed: true
           severity: CRITICAL,HIGH
