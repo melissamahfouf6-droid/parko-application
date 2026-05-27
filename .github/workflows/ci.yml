@@ -106,14 +106,15 @@ jobs:
           format: table
           exit-code: 1
 
-      - name: Trivy image scan (backend)
+      - name: Trivy image scan (backend OS packages)
         uses: aquasecurity/trivy-action@v0.24.0
         with:
           image-ref: parko-api:${{ steps.meta.outputs.tag }}
-          vuln-type: os,library
+          # Node library CVEs are checked via backend fs scan + the verify step above.
+          # Trivy image "library" scan can false-positive on nested package.json metadata.
+          vuln-type: os
           ignore-unfixed: true
           severity: CRITICAL,HIGH
           format: table
           exit-code: 1
-          skip-files: package-lock.json
 
