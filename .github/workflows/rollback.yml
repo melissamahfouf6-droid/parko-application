@@ -1,0 +1,75 @@
+name: Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_sha:
+        description: Optional git SHA to roll back to (defaults to stable-sha annotation)
+        required: false
+        type: string
+      reason:
+        description: Reason for manual rollback
+        required: false
+        default: manual rollback
+        type: string
+
+permissions:
+  contents: read
+  packages: read
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE: ghcr.io/melissamahfouf6-droid/parko-api
+  K8S_NAMESPACE: parko
+
+jobs:
+  rollback-kubernetes:
+    name: Rollback parko-api
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v4
+
+      - name: Setup kustomize
+        uses: imahjoub/install-kustomize@v1.2.0
+
+      - name: Configure kubeconfig
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        run: |
+          mkdir -p ~/.kube
+          echo "${KUBE_CONFIG}" | base64 -d > ~/.kube/config
+          chmod 600 ~/.kube/config
+
+      - name: Roll back deployment
+        id: rollback
+        env:
+          ROLLBACK_SHA: ${{ inputs.target_sha }}
+          ROLLBACK_REASON: ${{ inputs.reason }}
+        run: bash scripts/k8s/rollback.sh
+
+      - name: Notify success
+        if: success()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          bash scripts/k8s/notify-deploy.sh \
+            "Parko manual rollback succeeded" \
+            "Restored parko-api to a known stable image in namespace ${K8S_NAMESPACE}." \
+            success
+
+      - name: Notify failure
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          bash scripts/k8s/notify-deploy.sh \
+            "Parko manual rollback FAILED" \
+            "Could not restore parko-api. Check GitHub Actions logs and cluster state." \
+            error
+          exit 1

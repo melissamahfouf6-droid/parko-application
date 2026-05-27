@@ -1,0 +1,9 @@
+node_modules
+dist
+parko.db
+*.db
+.env
+.env.*
+npm-debug.log*
+coverage
+.git

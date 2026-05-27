@@ -33,7 +33,7 @@ import { HealthController } from './health.controller';
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: 'parko.db',
+      database: process.env.PARKO_DB_PATH ?? 'parko.db',
       entities: [
         LoyaltyAccount,
         PointsTransaction,

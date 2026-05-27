@@ -1,0 +1,188 @@
+name: CD
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE: ghcr.io/melissamahfouf6-droid/parko-api
+  K8S_NAMESPACE: parko
+
+jobs:
+  deploy-kubernetes:
+    name: Deploy to Kubernetes
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    outputs:
+      deploy_tag: ${{ steps.meta.outputs.tag }}
+    steps:
+      - name: Checkout (deployed commit)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Set image tag
+        id: meta
+        run: echo "tag=${{ github.event.workflow_run.head_sha }}" >> "$GITHUB_OUTPUT"
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push backend image
+        uses: docker/build-push-action@v6
+        with:
+          context: backend
+          file: backend/Dockerfile
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:${{ steps.meta.outputs.tag }}
+            ${{ env.IMAGE }}:sha-${{ steps.meta.outputs.tag }}
+
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v4
+
+      - name: Setup kustomize
+        uses: imahjoub/install-kustomize@v1.2.0
+
+      - name: Configure kubeconfig
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        run: |
+          if [[ -z "${KUBE_CONFIG}" ]]; then
+            echo "KUBE_CONFIG secret is not set. Add a base64-encoded kubeconfig to repo secrets." >&2
+            exit 1
+          fi
+          mkdir -p ~/.kube
+          echo "${KUBE_CONFIG}" | base64 -d > ~/.kube/config
+          chmod 600 ~/.kube/config
+
+      - name: Record previous stable SHA (for rollback)
+        id: rollback
+        run: |
+          PREV="$(kubectl -n "${K8S_NAMESPACE}" get deployment parko-api \
+            -o jsonpath='{.metadata.annotations.parko\.io/deployed-sha}' 2>/dev/null || true)"
+          echo "previous=${PREV}" >> "$GITHUB_OUTPUT"
+
+      - name: Apply manifests (image = git SHA)
+        run: |
+          cd k8s
+          kustomize edit set image "parko-api=${IMAGE}:${{ steps.meta.outputs.tag }}"
+          kubectl apply -k .
+          kubectl -n "${K8S_NAMESPACE}" annotate deployment/parko-api \
+            "parko.io/deployed-sha=${{ steps.meta.outputs.tag }}" \
+            "parko.io/previous-stable-sha=${{ steps.rollback.outputs.previous }}" \
+            --overwrite
+
+      - name: Rolling update (zero-downtime strategy)
+        run: |
+          kubectl -n "${K8S_NAMESPACE}" rollout status deployment/parko-api --timeout=5m
+
+      - name: Post-deploy health probe (2 minutes)
+        id: health
+        run: bash scripts/k8s/wait-health.sh
+        env:
+          NAMESPACE: parko
+          DEPLOYMENT: parko-api
+          MAX_SECONDS: 120
+
+      - name: Soak monitor (5 minutes, kubectl logs)
+        id: soak
+        if: success()
+        run: bash scripts/k8s/soak-monitor.sh
+        env:
+          NAMESPACE: parko
+          DEPLOYMENT: parko-api
+          SOAK_SECONDS: 300
+          SAMPLE_INTERVAL: 15
+          MAX_5XX_LINES: 10
+          MAX_CRITICAL_ERRORS: 5
+          MAX_ERROR_LINES: 30
+
+      - name: Mark deployment stable
+        if: success()
+        run: |
+          kubectl -n "${K8S_NAMESPACE}" annotate deployment/parko-api \
+            "parko.io/stable-sha=${{ steps.meta.outputs.tag }}" \
+            --overwrite
+          echo "Deployment ${{ steps.meta.outputs.tag }} marked stable."
+
+      - name: Collect diagnostics on deploy failure
+        if: failure()
+        run: |
+          echo "::error::Deployment failed (health and/or soak)."
+          kubectl -n "${K8S_NAMESPACE}" annotate deployment/parko-api \
+            "parko.io/last-failure-at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            "parko.io/last-failure-sha=${{ steps.meta.outputs.tag }}" \
+            "parko.io/last-failure-reason=health_or_soak" \
+            --overwrite || true
+          kubectl -n "${K8S_NAMESPACE}" get pods -l app.kubernetes.io/name=parko-api -o wide || true
+          kubectl -n "${K8S_NAMESPACE}" logs deployment/parko-api --tail=120 || true
+          exit 1
+
+  rollback-on-failure:
+    name: Auto rollback + alert
+    needs: deploy-kubernetes
+    if: failure() && needs.deploy-kubernetes.result == 'failure'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v4
+
+      - name: Setup kustomize
+        uses: imahjoub/install-kustomize@v1.2.0
+
+      - name: Configure kubeconfig
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        run: |
+          mkdir -p ~/.kube
+          echo "${KUBE_CONFIG}" | base64 -d > ~/.kube/config
+          chmod 600 ~/.kube/config
+
+      - name: Roll back to last stable SHA
+        id: rollback
+        env:
+          ROLLBACK_REASON: "auto rollback after failed health/soak (sha ${{ needs.deploy-kubernetes.outputs.deploy_tag }})"
+        run: bash scripts/k8s/rollback.sh
+
+      - name: Alert — rollback succeeded
+        if: success()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          MSG="Failed SHA: ${{ needs.deploy-kubernetes.outputs.deploy_tag }}. Health check or 5-minute soak failed. Restored stable image in ${K8S_NAMESPACE}."
+          bash scripts/k8s/notify-deploy.sh \
+            "Parko deploy FAILED — auto rollback succeeded" \
+            "${MSG}" \
+            error
+
+      - name: Alert — rollback failed
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          MSG="Failed SHA: ${{ needs.deploy-kubernetes.outputs.deploy_tag }}. Auto rollback could not restore service. Manual intervention required."
+          bash scripts/k8s/notify-deploy.sh \
+            "Parko deploy FAILED — auto rollback FAILED" \
+            "${MSG}" \
+            error
+          exit 1

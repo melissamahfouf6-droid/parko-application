@@ -283,3 +283,12 @@ Create keys in [Google Cloud Console](https://console.cloud.google.com/) → API
 
 ### Notes
 - Networking, auth, realtime, payments, and notifications are scaffolded as **interfaces/placeholders**. You can connect them to your NestJS backend when ready.
+
+### CI/CD (GitHub Actions + Kubernetes)
+
+- **CI** (`.github/workflows/ci.yml`): on every PR and push to `main` — Flutter analyze/test, backend build, Docker build, Trivy scan. Images are tagged with the **git commit SHA** (never `latest`).
+- **CD** (`.github/workflows/cd.yml`): deploy → health (2m) → soak (5m) → mark stable; on failure **auto-rollback** + Slack/Discord alerts.
+- **Rollback** (`.github/workflows/rollback.yml`): manual rollback workflow.
+- **Secrets**: `KUBE_CONFIG`, `SLACK_WEBHOOK_URL`, `DISCORD_WEBHOOK_URL`.
+- **Health**: `GET /api/health` and `GET /api/healthz` — returns **503** if SQLite is down.
+- **K8s manifests**: `k8s/` — see [k8s/README.md](k8s/README.md). Set GitHub secret **`KUBE_CONFIG`** (base64 kubeconfig).
