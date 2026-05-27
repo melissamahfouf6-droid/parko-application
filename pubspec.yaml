@@ -37,9 +37,6 @@ dependencies:
   flutter_local_notifications: ^17.2.4
   timezone: ^0.9.4
 
-  # Pinned by flutter_localizations; explicit so analyzer sees the dependency for generated l10n.
-  intl: 0.18.1
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

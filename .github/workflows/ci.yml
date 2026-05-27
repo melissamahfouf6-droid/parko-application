@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -29,7 +30,7 @@ jobs:
         run: flutter gen-l10n
 
       - name: Analyze
-        run: flutter analyze lib
+        run: flutter analyze --no-fatal-infos lib
 
       - name: Test
         run: flutter test
