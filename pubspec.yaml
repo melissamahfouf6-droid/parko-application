@@ -46,8 +46,8 @@ dev_dependencies:
   build_runner: ^2.4.9
 
 flutter:
-  generate: true
   uses-material-design: true
+  generate: true
 
   assets:
     - assets/images/
