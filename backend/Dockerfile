@@ -19,8 +19,10 @@ RUN npm run build
 FROM node:20-alpine3.21 AS prod-deps
 WORKDIR /app
 COPY package*.json ./
+COPY scripts/strip-package-json-deps.js scripts/strip-package-json-deps.js
 RUN npm ci --omit=dev \
     && npm dedupe --omit=dev \
+    && node scripts/strip-package-json-deps.js \
     && node -e "\
       const check=(n,fn)=>{const v=require(n+'/package.json').version; console.log(n,v); if(!fn(v)) throw new Error(n+' '+v);};\
       check('tar',v=>!v.startsWith('6.'));\
@@ -37,8 +39,7 @@ ENV PORT=3000
 
 RUN apk upgrade --no-cache
 
-# Include lockfile so scanners (Trivy) resolve the same versions as npm ci.
-COPY package.json package-lock.json ./
+COPY package.json ./
 COPY --from=prod-deps /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 
