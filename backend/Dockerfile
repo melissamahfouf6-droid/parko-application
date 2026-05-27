@@ -5,18 +5,18 @@
 ## - Unique image tags should be applied by CI (e.g. git SHA); never use `latest`.
 ##
 
-FROM node:20-alpine AS deps
+FROM node:20-alpine3.21 AS deps
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 
-FROM node:20-alpine AS build
+FROM node:20-alpine3.21 AS build
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
-FROM node:20-alpine AS prod-deps
+FROM node:20-alpine3.21 AS prod-deps
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci --omit=dev \
@@ -30,15 +30,15 @@ RUN npm ci --omit=dev \
     " \
     && npm cache clean --force
 
-FROM node:20-alpine AS runtime
+FROM node:20-alpine3.21 AS runtime
 WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000
 
 RUN apk upgrade --no-cache
 
-# package-lock.json is not needed at runtime; omitting it avoids Trivy reading stale lock metadata.
-COPY package.json ./
+# Include lockfile so scanners (Trivy) resolve the same versions as npm ci.
+COPY package.json package-lock.json ./
 COPY --from=prod-deps /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 

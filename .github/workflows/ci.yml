@@ -97,7 +97,7 @@ jobs:
           "
 
       - name: Trivy filesystem scan (backend)
-        uses: aquasecurity/trivy-action@v0.24.0
+        uses: aquasecurity/trivy-action@v0.28.0
         with:
           scan-type: fs
           scan-ref: backend
@@ -105,16 +105,16 @@ jobs:
           severity: CRITICAL,HIGH
           format: table
           exit-code: 1
+          scanners: vuln
 
-      - name: Trivy image scan (backend OS packages)
-        uses: aquasecurity/trivy-action@v0.24.0
+      - name: Trivy image scan (backend)
+        uses: aquasecurity/trivy-action@v0.28.0
         with:
           image-ref: parko-api:${{ steps.meta.outputs.tag }}
-          # Node library CVEs are checked via backend fs scan + the verify step above.
-          # Trivy image "library" scan can false-positive on nested package.json metadata.
-          vuln-type: os
+          vuln-type: os,library
           ignore-unfixed: true
           severity: CRITICAL,HIGH
           format: table
           exit-code: 1
+          scanners: vuln
 
