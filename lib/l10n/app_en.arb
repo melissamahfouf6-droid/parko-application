@@ -1,0 +1,555 @@
+{
+  "@@locale": "en",
+  "appName": "Parko",
+  "tagline": "Smart Parking Solution",
+  "getStarted": "Get Started",
+  "skip": "Skip",
+  "next": "Next",
+  "back": "Back",
+  "onboardingTitle1": "Find parking instantly",
+  "onboardingBody1": "Real-time availability at malls, hospitals, universities",
+  "onboardingTitle2": "Reserve your spot",
+  "onboardingBody2": "Book ahead and never circle looking for parking again",
+  "onboardingTitle3": "Navigate to your spot",
+  "onboardingBody3": "Get guided to your exact parking location",
+  "authTitle": "Welcome to Parko",
+  "phoneTab": "Phone",
+  "emailTab": "Email",
+  "phoneHint": "Phone number",
+  "emailHint": "Email address",
+  "passwordHint": "Password",
+  "sendCode": "Send Code",
+  "signIn": "Sign in",
+  "signUp": "Sign up",
+  "signUpTitle": "Create your account",
+  "firstNameHint": "First name",
+  "lastNameHint": "Last name",
+  "confirmPasswordHint": "Confirm password",
+  "createAccount": "Create account",
+  "passwordsDoNotMatch": "Passwords do not match",
+  "fillAllFields": "Please fill all fields",
+  "forgotPasswordComingSoon": "Password reset will be available in a future update.",
+  "forgotPassword": "Forgot password?",
+  "searchHint": "Search destination or parking lot",
+  "availableNow": "Available now",
+  "reservableAhead": "Reservable in advance",
+  "showFullLots": "Show full lots",
+  "resetFilters": "Reset filters",
+  "applyFilters": "Apply filters",
+  "navigateToParking": "Navigate to parking",
+  "reserveSpot": "Reserve spot",
+  "parkPayNow": "Park & Pay Now",
+  "drawerMyParking": "My parking",
+  "drawerWallet": "Wallet & payments",
+  "drawerSettings": "Settings",
+  "drawerLanguage": "Language",
+  "drawerSignOut": "Sign out",
+  "drawerFindParking": "Find parking near me",
+  "searchTitle": "Search",
+  "myParkingTitle": "My parking",
+  "tabActive": "Active",
+  "tabUpcoming": "Upcoming",
+  "tabHistory": "History",
+  "emptyActiveParking": "No active parking",
+  "emptyUpcoming": "No upcoming reservations",
+  "emptyHistory": "No past sessions yet",
+  "mapPreviewTitle": "Map preview",
+  "mapPreviewHint": "Google Maps is not embedded on macOS, Linux, or Windows desktop builds. Use iOS Simulator, Android, or Chrome (web) for the live map. Tap a marker below for lot details.",
+  "distanceAwayWalk": "{distance} away • {minutes} min walk",
+  "@distanceAwayWalk": {
+    "placeholders": {
+      "distance": { "type": "String" },
+      "minutes": { "type": "int" }
+    }
+  },
+  "drawerLoyalty": "Parko Points",
+  "loyaltyScreenTitle": "Parko Points",
+  "loyaltyScreenSubtitle": "Earn نقاط باركو on every visit · redeem for free parking",
+  "loyaltyBalance": "Balance: {points} pts",
+  "@loyaltyBalance": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "loyaltyLifetime": "Lifetime: {points} pts",
+  "@loyaltyLifetime": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "loyaltyTierBronze": "Bronze",
+  "loyaltyTierSilver": "Silver",
+  "loyaltyTierGold": "Gold",
+  "loyaltyTierPlatinum": "Platinum",
+  "loyaltyProgressToNext": "{points} pts to {tierName}",
+  "@loyaltyProgressToNext": {
+    "placeholders": {
+      "points": { "type": "int" },
+      "tierName": { "type": "String" }
+    }
+  },
+  "loyaltyMaxTier": "Platinum — keep earning for redemptions",
+  "loyaltyDailyCheckIn": "Daily check-in (+5)",
+  "loyaltyDemoParking": "Demo: complete session (3.5 KWD)",
+  "loyaltyRedeem100": "Redeem 100 pts → 5 KWD credit",
+  "loyaltyRewardsTitle": "Rewards catalog",
+  "loyaltyRedemptionRule": "100 points = 5 KWD parking credit",
+  "loyaltyTiersTitle": "Levels & perks",
+  "loyaltyHistoryTitle": "Points history",
+  "loyaltyEmptyHistory": "No transactions yet",
+  "loyaltyEarnAtLot": "Earn up to {points} pts on paid visits here",
+  "@loyaltyEarnAtLot": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "loyaltySnackEarned": "You earned {points} pts!",
+  "@loyaltySnackEarned": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "loyaltySnackLevelUp": "Level up! You are now {tier}",
+  "@loyaltySnackLevelUp": {
+    "placeholders": { "tier": { "type": "String" } }
+  },
+  "loyaltySnackRedeem": "Redeemed 100 pts for parking credit",
+  "loyaltySnackCheckIn": "+5 pts daily check-in",
+  "loyaltyErrCheckInDone": "Already checked in today",
+  "loyaltyErrBalance": "Not enough points",
+  "loyaltyRedeemConfirmTitle": "Redeem 100 points?",
+  "loyaltyCancel": "Cancel",
+  "loyaltyConfirm": "Redeem",
+  "loyaltyPerkBronze": "Bronze (0–499): standard",
+  "loyaltyPerkSilver": "Silver (500–1999): 5% parking discount",
+  "loyaltyPerkGold": "Gold (2000–4999): 10% + priority reservations",
+  "loyaltyPerkPlatinum": "Platinum (5000+): 15% + VIP spots + valet perks",
+  "loyaltyApiHint": "Run backend and launch with --dart-define=PARKO_API_BASE=… to sync points.",
+  "loyaltyHomeBadge": "{points} pts",
+  "@loyaltyHomeBadge": {
+    "placeholders": { "points": { "type": "String" } }
+  },
+  "predictionBannerOpens": "Predicted: {lotName} eases in ~{minutes} min",
+  "@predictionBannerOpens": {
+    "placeholders": {
+      "lotName": { "type": "String" },
+      "minutes": { "type": "int" }
+    }
+  },
+  "predictionChance": "{percent}% chance of finding parking soon",
+  "@predictionChance": {
+    "placeholders": { "percent": { "type": "int" } }
+  },
+  "predictionSectionTitle": "Smart prediction",
+  "predictionTypicalOpens": "Usually opens around {time}",
+  "@predictionTypicalOpens": {
+    "placeholders": { "time": { "type": "String" } }
+  },
+  "predictionPatternTitle": "Typical fill today",
+  "predictionNotifyMe": "Notify me when available",
+  "predictionNotifyDone": "You will be notified when spots open",
+  "predictionNotifyAlready": "Already on the waitlist for this lot",
+  "shareSpotTitle": "Share your spot",
+  "shareSpotFab": "Share spot",
+  "shareAvailableNow": "{count} spots shared nearby — save up to 20%",
+  "@shareAvailableNow": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "shareLeaveEarly": "Leave early — sell my spot",
+  "shareLeaveEarlyTitle": "بيع موقفي",
+  "shareLeaveEarlyBody": "List your remaining time at a 20% discount. You get 70% refund; buyer enters within 10 minutes.",
+  "shareConfirmList": "List my spot for sale",
+  "shareListedSuccess": "Listed! Refund {amount} KWD credited (demo).",
+  "@shareListedSuccess": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "shareActiveSession": "Active at {lotName}",
+  "@shareActiveSession": {
+    "placeholders": { "lotName": { "type": "String" } }
+  },
+  "shareTimeLeft": "{hours}h {minutes}m left",
+  "@shareTimeLeft": {
+    "placeholders": {
+      "hours": { "type": "int" },
+      "minutes": { "type": "int" }
+    }
+  },
+  "shareStartDemoSession": "Start demo parking session",
+  "shareEndSession": "End session",
+  "shareBuyNow": "Get this spot — {price} KWD",
+  "@shareBuyNow": {
+    "placeholders": { "price": { "type": "String" } }
+  },
+  "shareClaimSuccess": "Spot claimed! Head there within 10 minutes.",
+  "shareSheetTitle": "Shared parking — available now",
+  "shareRemaining": "{minutes} min left • {discount}% off",
+  "@shareRemaining": {
+    "placeholders": {
+      "minutes": { "type": "int" },
+      "discount": { "type": "int" }
+    }
+  },
+  "buddyCardGoing": "{count} people going to {destination} now",
+  "@buddyCardGoing": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "destination": { "type": "String" }
+    }
+  },
+  "buddyFindTitle": "Parking buddies",
+  "buddyJoinSearch": "Join — find a buddy",
+  "buddyJoined": "You joined the buddy search!",
+  "buddyChatHint": "Tap a buddy to chat and coordinate parking.",
+  "buddyEmpty": "No buddies for this destination yet. Be the first!",
+  "buddySeatsNeeded": "{count} seat(s) needed",
+  "@buddySeatsNeeded": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "buddySearchAction": "Find parking buddy",
+  "marketplaceCta": "Earn ~{amount} KWD/mo — list your driveway",
+  "@marketplaceCta": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "marketplaceListTitle": "Parking marketplace",
+  "marketplaceListMySpot": "List my spot",
+  "marketplaceSpotTitleHint": "Spot title (e.g. Salmiya driveway)",
+  "marketplacePriceHint": "Price per day (KWD)",
+  "marketplaceAvailabilityHint": "Availability",
+  "marketplaceAddPhoto": "Add photo (verification)",
+  "marketplacePhotoHint": "Photo verification — camera upload in next build.",
+  "marketplaceSubmit": "Publish listing",
+  "marketplaceListed": "Your spot is live on the map!",
+  "marketplaceBrowseTitle": "Nearby private spots",
+  "marketplaceVerified": "Photo verified (demo)",
+  "marketplaceBookSpot": "Book this spot",
+  "marketplaceBookSoon": "Booking & payment — Tap/Stripe next.",
+  "marketplaceNearLot": "{count} resident spots nearby from {price} KWD/day",
+  "@marketplaceNearLot": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "price": { "type": "String" }
+    }
+  },
+  "drawerMarketplace": "List my spot (marketplace)",
+  "drawerBuddies": "Parking buddies",
+  "reserveTitle": "Reserve parking",
+  "reserveWhen": "When",
+  "reserveToday": "Today",
+  "reserveTomorrow": "Tomorrow",
+  "reserveDuration": "Duration",
+  "reserveDuration1h": "1 hour",
+  "reserveDuration2h": "2 hours",
+  "reserveDuration3h": "3 hours",
+  "reserveDurationAllDay": "All day",
+  "reserveZoneHint": "Zone / level (optional)",
+  "reserveTotal": "Estimated total: {price} KWD",
+  "@reserveTotal": {
+    "placeholders": { "price": { "type": "String" } }
+  },
+  "reserveConfirm": "Confirm reservation",
+  "reserveSuccess": "Spot reserved! See My parking → Upcoming.",
+  "reserveCancel": "Cancel reservation",
+  "reserveCancelConfirm": "Cancel this reservation?",
+  "reserveCancelled": "Reservation cancelled",
+  "reserveStartsInHours": "Starts in {hours}h {mins}m",
+  "@reserveStartsInHours": {
+    "placeholders": {
+      "hours": { "type": "int" },
+      "mins": { "type": "int" }
+    }
+  },
+  "reserveStartsInMins": "Starts in {mins} min",
+  "@reserveStartsInMins": {
+    "placeholders": { "mins": { "type": "int" } }
+  },
+  "homeNextReservation": "Reserved: {lot}",
+  "@homeNextReservation": {
+    "placeholders": { "lot": { "type": "String" } }
+  },
+  "reserveNavigateHint": "Opening directions to {lot}…",
+  "@reserveNavigateHint": {
+    "placeholders": { "lot": { "type": "String" } }
+  },
+  "reservePaySoon": "Pay at arrival — Tap/Stripe wallet next.",
+  "walletTitle": "Wallet & payments",
+  "walletBalanceLabel": "Available balance",
+  "walletBalanceAmount": "{amount} KWD",
+  "@walletBalanceAmount": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "walletTopUpTitle": "Quick top-up (demo)",
+  "walletTopUpAmount": "+{amount} KWD",
+  "@walletTopUpAmount": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "walletTopUpHint": "Simulates KNET / Tap — production keys later.",
+  "walletTopUpSuccess": "Added {amount} KWD to your wallet",
+  "@walletTopUpSuccess": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "walletKnet": "KNET",
+  "walletTap": "Tap",
+  "walletHistory": "Recent activity",
+  "walletEmptyHistory": "No transactions yet",
+  "walletTxType": "Transaction",
+  "walletPayTitle": "Pay for parking",
+  "walletPayBalance": "Wallet balance: {amount} KWD",
+  "@walletPayBalance": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "walletPayAmount": "Total: {amount} KWD",
+  "@walletPayAmount": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "walletPayFree": "This lot is free — starting session without charge.",
+  "walletPayConfirm": "Pay with wallet",
+  "walletPaySuccess": "Paid — active parking started",
+  "walletInsufficient": "Insufficient wallet balance. Top up in Wallet.",
+  "walletBalanceUnknown": "Balance unavailable",
+  "mapsOpenFailed": "Could not open maps on this device",
+  "walletHomeChip": "{amount} KWD",
+  "@walletHomeChip": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "settingsTitle": "Settings",
+  "settingsProfileSection": "Profile",
+  "settingsNameLabel": "Display name",
+  "settingsPhoneLabel": "Phone",
+  "settingsEmailLabel": "Email",
+  "settingsSaveProfile": "Save profile",
+  "settingsProfileSaved": "Profile saved",
+  "settingsNotificationsSection": "Notifications",
+  "settingsParkingReminders": "Parking reminders",
+  "settingsParkingRemindersHint": "Reservation start & lot availability alerts",
+  "settingsMarketing": "Offers & news",
+  "settingsMarketingHint": "Mall deals and Parko promotions",
+  "settingsAppSection": "App",
+  "settingsAbout": "About Parko",
+  "settingsVersion": "Version {version}",
+  "@settingsVersion": {
+    "placeholders": { "version": { "type": "String" } }
+  },
+  "loyaltySnackRedeemWallet": "{amount} KWD added to your Parko wallet",
+  "@loyaltySnackRedeemWallet": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "buddyChatSubtitle": "Coordinate meetup & split parking",
+  "buddyChatInputHint": "Message…",
+  "filterTitle": "Map filters",
+  "filterApplied": "Showing {count} parking locations",
+  "@filterApplied": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "notificationsTitle": "Notifications",
+  "notificationsMarkAllRead": "Mark all read",
+  "notificationsEmpty": "No notifications yet",
+  "searchNearMe": "Use my location",
+  "searchNearMeHint": "Sort lots by distance from you",
+  "locationFound": "Centered on your location",
+  "locationUnavailable": "Location unavailable — enable GPS & allow Parko in Settings",
+  "searchSelected": "Searching near {place}",
+  "@searchSelected": {
+    "placeholders": { "place": { "type": "String" } }
+  },
+  "marketplacePhotoAdded": "Photo added for verification (demo)",
+  "marketplaceChangePhoto": "Change photo",
+  "legendAvailable": "Open",
+  "legendLimited": "Limited",
+  "legendFull": "Full",
+  "lotDistanceKm": "{km} km away",
+  "@lotDistanceKm": {
+    "placeholders": { "km": { "type": "String" } }
+  },
+  "reviewSectionTitle": "Rate this lot",
+  "reviewSectionHint": "Share your experience — earn 10 Parko Points once per day per lot.",
+  "reviewCommentHint": "Optional comment",
+  "reviewSubmit": "Submit review",
+  "reviewSubmitted": "Thanks! New rating {rating} ★ ({count} reviews) · +{points} pts",
+  "@reviewSubmitted": {
+    "placeholders": {
+      "rating": { "type": "String" },
+      "count": { "type": "int" },
+      "points": { "type": "int" }
+    }
+  },
+  "reviewAlreadyToday": "You already reviewed this lot today.",
+  "reviewFailed": "Could not submit review. Try again.",
+  "helpTitle": "Help & FAQ",
+  "helpIntro": "Quick answers about Parko in Kuwait — parking, wallet, and loyalty.",
+  "helpFaq1Q": "How do I pay for parking?",
+  "helpFaq1A": "Select a lot on the map, tap Pay now, and confirm with your Parko wallet. Top up in Wallet if your balance is low.",
+  "helpFaq2Q": "What are Parko Points?",
+  "helpFaq2A": "Earn points when you pay for parking, check in daily, and review lots. Redeem 100 points for 5 KWD wallet credit in Loyalty.",
+  "helpFaq3Q": "Can I reserve a spot ahead?",
+  "helpFaq3A": "Yes — open a lot and tap Reserve. Upcoming reservations appear under My Parking.",
+  "helpFaq4Q": "Why does the map use OpenStreetMap?",
+  "helpFaq4A": "Parko uses OSM by default so you can explore without a Google Maps billing account. Optional Google Maps is available via scripts/setup_google_maps_key.sh.",
+  "helpFaq5Q": "How do shared parking and buddies work?",
+  "helpFaq5A": "Leave early to share your spot, see buddies near you on the map, and list a private driveway in Marketplace.",
+  "helpContactTitle": "Contact support",
+  "helpContactEmail": "support@parko.kw",
+  "favoritesTitle": "Saved lots",
+  "favoritesEmpty": "Star a parking lot on the map to save it here for quick access.",
+  "favoritesAdded": "Lot saved to favorites",
+  "favoritesRemoved": "Removed from favorites",
+  "favoritesSavedOn": "Saved {date}",
+  "@favoritesSavedOn": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "homeActiveSession": "Parking now · {lotName}",
+  "@homeActiveSession": {
+    "placeholders": { "lotName": { "type": "String" } }
+  },
+  "authOtpSent": "Verification code sent",
+  "authOtpHint": "6-digit code",
+  "authOtpVerify": "Verify & continue",
+  "authOtpInvalid": "Invalid code. Demo code is 123456.",
+  "authOtpExpired": "Code expired — request a new one",
+  "authDemoCodeHint": "Demo OTP: 123456 (backend dev mode)",
+  "authChangePhone": "Change phone number",
+  "searchRecentTitle": "Recent",
+  "searchRecentClear": "Clear",
+  "searchPopularTitle": "Popular in Kuwait",
+  "sessionEnded": "Parking session ended",
+  "sessionExtend30": "+30 min",
+  "sessionExtended": "Session extended by {minutes} minutes",
+  "@sessionExtended": {
+    "placeholders": { "minutes": { "type": "int" } }
+  },
+  "homeRefreshed": "Map data refreshed",
+  "settingsProfileSynced": "Profile saved & synced to Parko",
+  "authWelcomeBonus": "Welcome! {kwd} KWD wallet + {points} Parko Points added",
+  "@authWelcomeBonus": {
+    "placeholders": {
+      "kwd": { "type": "String" },
+      "points": { "type": "int" }
+    }
+  },
+  "filterQuickAll": "All",
+  "filterQuickFree": "Free",
+  "filterQuickValet": "Valet",
+  "filterQuickReserve": "Reservable",
+  "receiptTitle": "Parking receipt",
+  "receiptDuration": "Time parked",
+  "receiptPaid": "Paid",
+  "receiptPoints": "Parko Points",
+  "receiptPointsEarned": "+{points} pts",
+  "@receiptPointsEarned": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "receiptViewHistory": "View parking history",
+  "historyTypeSession": "Walk-up session",
+  "historyTypeReservation": "Reservation",
+  "historyWhen": "When",
+  "historyShowOnMap": "Show on map",
+  "homeCheckInPrompt": "Daily check-in available — +5 Parko Points",
+  "reminderScheduled": "Device reminder set 15 min before start",
+  "mapLoadErrorTitle": "Could not load parking map",
+  "mapLoadErrorConnection": "Parko API is not reachable. Start the backend, or the app will use demo lots when possible.",
+  "mapLoadErrorGeneric": "Something went wrong loading parking data.",
+  "mapLoadErrorApiHint": "API: {url}",
+  "@mapLoadErrorApiHint": {
+    "placeholders": { "url": { "type": "String" } }
+  },
+  "mapRetry": "Retry",
+  "mapOfflineFallback": "Offline demo map — start backend for live data",
+  "mapNoLotsMatch": "No lots match your filters",
+  "apiStatusLive": "Live",
+  "apiStatusDemo": "Demo",
+  "apiStatusOffline": "Offline",
+  "parkingStatsVisits": "{count} visits",
+  "@parkingStatsVisits": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "parkingStatsSpent": "{amount} KWD total spent",
+  "@parkingStatsSpent": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "signUpPhoneSubtitle": "Enter your details, then verify your Kuwait mobile number with a one-time code.",
+  "signUpVerifyPhone": "Continue with phone verification",
+  "signUpContinueOtp": "Enter the code sent to your phone to finish signup.",
+  "emailHintOptional": "Email (optional)",
+  "signUpPrompt": "New to Parko?",
+  "mapLayersTitle": "Map layers",
+  "mapLayersOverlays": "Overlays",
+  "mapLayersSharedSpots": "Shared spots",
+  "mapLayersPrivateSpots": "Private garage listings",
+  "mapLayersStyle": "Map style",
+  "mapLayersNormal": "Standard",
+  "mapLayersSatellite": "Satellite",
+  "shareLot": "Share lot",
+  "shareLotMessage": "Park at {name} on Parko — {spots} spots · {price}\nhttps://maps.google.com/?q={lat},{lng}",
+  "@shareLotMessage": {
+    "placeholders": {
+      "name": { "type": "String" },
+      "spots": { "type": "String" },
+      "price": { "type": "String" },
+      "lat": { "type": "double" },
+      "lng": { "type": "double" }
+    }
+  },
+  "settingsMemberSince": "Member since {date}",
+  "@settingsMemberSince": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "settingsUserId": "Account ID: {id}",
+  "@settingsUserId": {
+    "placeholders": { "id": { "type": "String" } }
+  },
+  "buddyChatEmpty": "Say hello to coordinate parking",
+  "mapTilesOfflineHint": "Map background needs internet — parking markers still work",
+  "settingsCopyId": "Copy account ID",
+  "settingsIdCopied": "Account ID copied",
+  "searchLotsTitle": "Parking lots",
+  "searchLotSubtitle": "{spots} · {price}",
+  "@searchLotSubtitle": {
+    "placeholders": {
+      "spots": { "type": "String" },
+      "price": { "type": "String" }
+    }
+  },
+  "searchNoResults": "No destinations or lots match your search",
+  "drawerWalletBalance": "{amount} KWD",
+  "@drawerWalletBalance": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "drawerPointsBalance": "{points} pts",
+  "@drawerPointsBalance": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "notificationsClearRead": "Clear read",
+  "notificationsClearedRead": "Read notifications cleared",
+  "walletTopUpCustomTitle": "Custom top-up",
+  "walletTopUpCustomLabel": "Amount",
+  "walletTopUpConfirm": "Add funds",
+  "walletTopUpInvalid": "Enter an amount between 1 and 500 KWD",
+  "homeFavoritesTitle": "Saved lots",
+  "homeFavoritesSeeAll": "See all",
+  "lotHours": "Hours: {hours}",
+  "@lotHours": {
+    "placeholders": { "hours": { "type": "String" } }
+  },
+  "reserveWalletBalance": "Wallet balance: {amount} KWD",
+  "@reserveWalletBalance": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "reservePayFromWallet": "Pay from wallet now",
+  "reservePayFromWalletHint": "Hold your spot — amount deducted immediately",
+  "notificationsFilterAll": "All",
+  "notificationsFilterReserve": "Reservations",
+  "notificationsFilterWallet": "Wallet",
+  "notificationsFilterShare": "Shared",
+  "loyaltyRedeemConfirmBody": "100 points will be converted to 5 KWD wallet credit for parking.",
+  "reserveCancelledRefund": "Cancelled · {amount} KWD refunded to wallet",
+  "@reserveCancelledRefund": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "historyFilterAll": "All",
+  "historyFilterSessions": "Walk-up",
+  "historyFilterReservations": "Reservations",
+  "helpFaq6Q": "Do I get a refund if I cancel a reservation?",
+  "helpFaq6A": "If you paid from your Parko wallet when booking, the amount is refunded automatically when you cancel before the start time.",
+  "reserveCancelConfirmRefund": "Cancel this reservation? {amount} KWD will be refunded to your wallet.",
+  "@reserveCancelConfirmRefund": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "reserveCancelConfirmNoRefund": "Cancel this reservation? Wallet refunds apply only before the start time.",
+  "reserveCancelledNoRefund": "Reservation cancelled (no refund — start time has passed or not paid from wallet).",
+  "settingsTheme": "Appearance",
+  "settingsThemeSystem": "Match system",
+  "settingsThemeLight": "Light",
+  "settingsThemeDark": "Dark"
+}
+

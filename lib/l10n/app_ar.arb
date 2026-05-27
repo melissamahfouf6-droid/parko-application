@@ -1,0 +1,555 @@
+{
+  "@@locale": "ar",
+  "appName": "بارکو",
+  "tagline": "حل مواقف ذكي",
+  "getStarted": "ابدأ الآن",
+  "skip": "تخطي",
+  "next": "التالي",
+  "back": "رجوع",
+  "onboardingTitle1": "اعثر على موقف فوراً",
+  "onboardingBody1": "توفر مباشر في المولات والمستشفيات والجامعات",
+  "onboardingTitle2": "احجز موقفك",
+  "onboardingBody2": "احجز مسبقاً وتوقف عن الدوران بحثاً عن موقف",
+  "onboardingTitle3": "اتجه إلى موقفك",
+  "onboardingBody3": "إرشاد خطوة بخطوة إلى موقع الموقف بالضبط",
+  "authTitle": "أهلاً بك في بارکو",
+  "phoneTab": "الهاتف",
+  "emailTab": "البريد",
+  "phoneHint": "رقم الهاتف",
+  "emailHint": "البريد الإلكتروني",
+  "passwordHint": "كلمة المرور",
+  "sendCode": "إرسال الرمز",
+  "signIn": "تسجيل الدخول",
+  "signUp": "إنشاء حساب",
+  "signUpTitle": "إنشاء حسابك",
+  "firstNameHint": "الاسم الأول",
+  "lastNameHint": "اسم العائلة",
+  "confirmPasswordHint": "تأكيد كلمة المرور",
+  "createAccount": "إنشاء الحساب",
+  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
+  "fillAllFields": "يرجى تعبئة جميع الحقول",
+  "forgotPasswordComingSoon": "إعادة تعيين كلمة المرور ستتوفر في تحديث لاحق.",
+  "forgotPassword": "نسيت كلمة المرور؟",
+  "searchHint": "ابحث عن وجهة أو موقف",
+  "availableNow": "متاح الآن",
+  "reservableAhead": "قابل للحجز مسبقاً",
+  "showFullLots": "إظهار الممتلئ",
+  "resetFilters": "إعادة ضبط",
+  "applyFilters": "تطبيق",
+  "navigateToParking": "الاتجاه إلى الموقف",
+  "reserveSpot": "حجز موقف",
+  "parkPayNow": "ابدأ الوقوف والدفع",
+  "drawerMyParking": "مواقفي",
+  "drawerWallet": "المحفظة والدفع",
+  "drawerSettings": "الإعدادات",
+  "drawerLanguage": "اللغة",
+  "drawerSignOut": "تسجيل الخروج",
+  "drawerFindParking": "أقرب موقف",
+  "searchTitle": "بحث",
+  "myParkingTitle": "مواقفي",
+  "tabActive": "نشط",
+  "tabUpcoming": "قادم",
+  "tabHistory": "السجل",
+  "emptyActiveParking": "لا يوجد وقوف نشط",
+  "emptyUpcoming": "لا حجوزات قادمة",
+  "emptyHistory": "لا سجل بعد",
+  "mapPreviewTitle": "معاينة الخريطة",
+  "mapPreviewHint": "خرائط Google غير مضمنة على تطبيقات macOS أو Linux أو Windows. استخدم محاكي iOS أو Android أو Chrome (ويب) للخريطة الحية. اضغط على أحد المواقع أدناه للتفاصيل.",
+  "distanceAwayWalk": "{distance} • مشي {minutes} دقيقة",
+  "@distanceAwayWalk": {
+    "placeholders": {
+      "distance": { "type": "String" },
+      "minutes": { "type": "int" }
+    }
+  },
+  "drawerLoyalty": "نقاط بارکو",
+  "loyaltyScreenTitle": "نقاط بارکو",
+  "loyaltyScreenSubtitle": "اكسب نقاطاً في كل زيارة واستبدلها بمواقف مجانية",
+  "loyaltyBalance": "الرصيد: {points} نقطة",
+  "@loyaltyBalance": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "loyaltyLifetime": "إجمالي ما كسبته: {points} نقطة",
+  "@loyaltyLifetime": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "loyaltyTierBronze": "برونزي",
+  "loyaltyTierSilver": "فضي",
+  "loyaltyTierGold": "ذهبي",
+  "loyaltyTierPlatinum": "بلاتيني",
+  "loyaltyProgressToNext": "{points} نقطة حتى {tierName}",
+  "@loyaltyProgressToNext": {
+    "placeholders": {
+      "points": { "type": "int" },
+      "tierName": { "type": "String" }
+    }
+  },
+  "loyaltyMaxTier": "بلاتيني — تابع الكسب للاستبدال",
+  "loyaltyDailyCheckIn": "حضور يومي (+٥)",
+  "loyaltyDemoParking": "تجربة: إنهاء جلسة (٣٫٥ د.ك)",
+  "loyaltyRedeem100": "استبدال ١٠٠ نقطة ← ٥ د.ك رصيد مواقف",
+  "loyaltyRewardsTitle": "كتالوج المكافآت",
+  "loyaltyRedemptionRule": "١٠٠ نقطة = ٥ د.ك رصيد مواقف",
+  "loyaltyTiersTitle": "المستويات والمزايا",
+  "loyaltyHistoryTitle": "سجل النقاط",
+  "loyaltyEmptyHistory": "لا يوجد سجل بعد",
+  "loyaltyEarnAtLot": "حتى {points} نقطة في الزيارات المدفوعة هنا",
+  "@loyaltyEarnAtLot": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "loyaltySnackEarned": "ربحت {points} نقطة!",
+  "@loyaltySnackEarned": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "loyaltySnackLevelUp": "صعدت للمستوى: {tier}",
+  "@loyaltySnackLevelUp": {
+    "placeholders": { "tier": { "type": "String" } }
+  },
+  "loyaltySnackRedeem": "استبدلت ١٠٠ نقطة برصيد مواقف",
+  "loyaltySnackCheckIn": "+٥ نقاط الحضور اليومي",
+  "loyaltyErrCheckInDone": "سجّلت حضور اليوم مسبقاً",
+  "loyaltyErrBalance": "النقاط غير كافية",
+  "loyaltyRedeemConfirmTitle": "استبدال ١٠٠ نقطة؟",
+  "loyaltyCancel": "إلغاء",
+  "loyaltyConfirm": "استبدال",
+  "loyaltyPerkBronze": "برونزي (٠–٤٩٩): أساسي",
+  "loyaltyPerkSilver": "فضي (٥٠٠–١٩٩٩): خصم ٥٪ على المواقف",
+  "loyaltyPerkGold": "ذهبي (٢٠٠٠–٤٩٩٩): ١٠٪ + أولوية الحجز",
+  "loyaltyPerkPlatinum": "بلاتيني (٥٠٠٠+): ١٥٪ + مواقف VIP + فاليه",
+  "loyaltyApiHint": "شغّل الخادم واستخدم --dart-define=PARKO_API_BASE=… لمزامنة النقاط.",
+  "loyaltyHomeBadge": "{points} نقطة",
+  "@loyaltyHomeBadge": {
+    "placeholders": { "points": { "type": "String" } }
+  },
+  "predictionBannerOpens": "توقع: {lotName} يخف الازدحام خلال ~{minutes} دقيقة",
+  "@predictionBannerOpens": {
+    "placeholders": {
+      "lotName": { "type": "String" },
+      "minutes": { "type": "int" }
+    }
+  },
+  "predictionChance": "{percent}% احتمال إيجاد موقف قريباً",
+  "@predictionChance": {
+    "placeholders": { "percent": { "type": "int" } }
+  },
+  "predictionSectionTitle": "توقع ذكي",
+  "predictionTypicalOpens": "عادة يفضى حوالي {time}",
+  "@predictionTypicalOpens": {
+    "placeholders": { "time": { "type": "String" } }
+  },
+  "predictionPatternTitle": "نمط الامتلاء اليوم",
+  "predictionNotifyMe": "أبلغني عند التوفر",
+  "predictionNotifyDone": "سنبلغك عند توفر مواقف",
+  "predictionNotifyAlready": "أنت مسجّل مسبقاً على قائمة الانتظار",
+  "shareSpotTitle": "شارك موقفك",
+  "shareSpotFab": "بيع موقفي",
+  "shareAvailableNow": "{count} مواقف معروضة قريباً — وفّر حتى ٢٠٪",
+  "@shareAvailableNow": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "shareLeaveEarly": "مغادرة مبكرة — بيع موقفي",
+  "shareLeaveEarlyTitle": "بيع موقفي",
+  "shareLeaveEarlyBody": "اعرض وقتك المتبقي بخصم ٢٠٪. تسترد ٧٠٪؛ المشتري يدخل خلال ١٠ دقائق.",
+  "shareConfirmList": "عرض موقفي للبيع",
+  "shareListedSuccess": "تم العرض! استرداد {amount} د.ك (تجربة).",
+  "@shareListedSuccess": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "shareActiveSession": "نشط في {lotName}",
+  "@shareActiveSession": {
+    "placeholders": { "lotName": { "type": "String" } }
+  },
+  "shareTimeLeft": "متبقي {hours} س {minutes} د",
+  "@shareTimeLeft": {
+    "placeholders": {
+      "hours": { "type": "int" },
+      "minutes": { "type": "int" }
+    }
+  },
+  "shareStartDemoSession": "بدء جلسة وقوف تجريبية",
+  "shareEndSession": "إنهاء الجلسة",
+  "shareBuyNow": "احجز — {price} د.ك",
+  "@shareBuyNow": {
+    "placeholders": { "price": { "type": "String" } }
+  },
+  "shareClaimSuccess": "تم الحجز! توجه خلال ١٠ دقائق.",
+  "shareSheetTitle": "مواقف معروضة — متاحة الآن",
+  "shareRemaining": "متبقي {minutes} د • خصم {discount}٪",
+  "@shareRemaining": {
+    "placeholders": {
+      "minutes": { "type": "int" },
+      "discount": { "type": "int" }
+    }
+  },
+  "buddyCardGoing": "{count} أشخاص متجهون إلى {destination} الآن",
+  "@buddyCardGoing": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "destination": { "type": "String" }
+    }
+  },
+  "buddyFindTitle": "رفاق المواقف",
+  "buddyJoinSearch": "انضم — ابحث عن رفيق",
+  "buddyJoined": "انضممت لبحث الرفاق!",
+  "buddyChatHint": "اضغط على زميل للدردشة وتنسيق الموقف.",
+  "buddyEmpty": "لا يوجد رفاق لهذه الوجهة بعد. كن الأول!",
+  "buddySeatsNeeded": "يحتاج {count} مقعد",
+  "@buddySeatsNeeded": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "buddySearchAction": "ابحث عن رفيق موقف",
+  "marketplaceCta": "اربح ~{amount} د.ك/شهر — اعرض موقفك",
+  "@marketplaceCta": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "marketplaceListTitle": "سوق المواقف",
+  "marketplaceListMySpot": "اعرض موقفي",
+  "marketplaceSpotTitleHint": "عنوان الموقف",
+  "marketplacePriceHint": "السعر لليوم (د.ك)",
+  "marketplaceAvailabilityHint": "التوفر",
+  "marketplaceAddPhoto": "إضافة صورة (تحقق)",
+  "marketplacePhotoHint": "التحقق بالصورة — رفع الكاميرا في تحديث لاحق.",
+  "marketplaceSubmit": "نشر الإعلان",
+  "marketplaceListed": "موقفك ظهر على الخريطة!",
+  "marketplaceBrowseTitle": "مواقف سكنية قريبة",
+  "marketplaceVerified": "موثّق بالصورة (تجربة)",
+  "marketplaceBookSpot": "احجز هذا الموقف",
+  "marketplaceBookSoon": "الحجز والدفع — قريباً.",
+  "marketplaceNearLot": "{count} مواقف سكنية من {price} د.ك/يوم",
+  "@marketplaceNearLot": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "price": { "type": "String" }
+    }
+  },
+  "drawerMarketplace": "اعرض موقفي (السوق)",
+  "drawerBuddies": "رفاق المواقف",
+  "reserveTitle": "حجز موقف",
+  "reserveWhen": "متى",
+  "reserveToday": "اليوم",
+  "reserveTomorrow": "غداً",
+  "reserveDuration": "المدة",
+  "reserveDuration1h": "ساعة",
+  "reserveDuration2h": "ساعتان",
+  "reserveDuration3h": "3 ساعات",
+  "reserveDurationAllDay": "يوم كامل",
+  "reserveZoneHint": "المنطقة / الطابق (اختياري)",
+  "reserveTotal": "الإجمالي التقريبي: {price} د.ك",
+  "@reserveTotal": {
+    "placeholders": { "price": { "type": "String" } }
+  },
+  "reserveConfirm": "تأكيد الحجز",
+  "reserveSuccess": "تم الحجز! راجع مواقفي → القادمة.",
+  "reserveCancel": "إلغاء الحجز",
+  "reserveCancelConfirm": "إلغاء هذا الحجز؟",
+  "reserveCancelled": "تم إلغاء الحجز",
+  "reserveStartsInHours": "يبدأ خلال {hours} س {mins} د",
+  "@reserveStartsInHours": {
+    "placeholders": {
+      "hours": { "type": "int" },
+      "mins": { "type": "int" }
+    }
+  },
+  "reserveStartsInMins": "يبدأ خلال {mins} د",
+  "@reserveStartsInMins": {
+    "placeholders": { "mins": { "type": "int" } }
+  },
+  "homeNextReservation": "محجوز: {lot}",
+  "@homeNextReservation": {
+    "placeholders": { "lot": { "type": "String" } }
+  },
+  "reserveNavigateHint": "فتح الاتجاهات إلى {lot}…",
+  "@reserveNavigateHint": {
+    "placeholders": { "lot": { "type": "String" } }
+  },
+  "reservePaySoon": "الدفع عند الوصول — محفظة Tap/Stripe قريباً.",
+  "walletTitle": "المحفظة والدفع",
+  "walletBalanceLabel": "الرصيد المتاح",
+  "walletBalanceAmount": "{amount} د.ك",
+  "@walletBalanceAmount": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "walletTopUpTitle": "شحن سريع (تجربة)",
+  "walletTopUpAmount": "+{amount} د.ك",
+  "@walletTopUpAmount": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "walletTopUpHint": "محاكاة KNET / Tap — مفاتيح الإنتاج لاحقاً.",
+  "walletTopUpSuccess": "تمت إضافة {amount} د.ك للمحفظة",
+  "@walletTopUpSuccess": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "walletKnet": "كي نت",
+  "walletTap": "تاب",
+  "walletHistory": "النشاط الأخير",
+  "walletEmptyHistory": "لا معاملات بعد",
+  "walletTxType": "معاملة",
+  "walletPayTitle": "دفع المواقف",
+  "walletPayBalance": "رصيد المحفظة: {amount} د.ك",
+  "@walletPayBalance": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "walletPayAmount": "الإجمالي: {amount} د.ك",
+  "@walletPayAmount": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "walletPayFree": "هذا الموقف مجاني — بدء الجلسة بدون رسوم.",
+  "walletPayConfirm": "الدفع من المحفظة",
+  "walletPaySuccess": "تم الدفع — بدأت جلسة موقف نشطة",
+  "walletInsufficient": "رصيد غير كافٍ. اشحن من المحفظة.",
+  "walletBalanceUnknown": "الرصيد غير متاح",
+  "mapsOpenFailed": "تعذر فتح الخرائط على هذا الجهاز",
+  "walletHomeChip": "{amount} د.ك",
+  "@walletHomeChip": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "settingsTitle": "الإعدادات",
+  "settingsProfileSection": "الملف الشخصي",
+  "settingsNameLabel": "الاسم",
+  "settingsPhoneLabel": "الهاتف",
+  "settingsEmailLabel": "البريد",
+  "settingsSaveProfile": "حفظ الملف",
+  "settingsProfileSaved": "تم حفظ الملف",
+  "settingsNotificationsSection": "الإشعارات",
+  "settingsParkingReminders": "تذكير المواقف",
+  "settingsParkingRemindersHint": "بداية الحجز وتنبيهات التوفر",
+  "settingsMarketing": "العروض والأخبار",
+  "settingsMarketingHint": "عروض المولات وبارکو",
+  "settingsAppSection": "التطبيق",
+  "settingsAbout": "عن بارکو",
+  "settingsVersion": "الإصدار {version}",
+  "@settingsVersion": {
+    "placeholders": { "version": { "type": "String" } }
+  },
+  "loyaltySnackRedeemWallet": "أُضيف {amount} د.ك إلى محفظة بارکو",
+  "@loyaltySnackRedeemWallet": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "buddyChatSubtitle": "تنسيق اللقاء وتقاسم الموقف",
+  "buddyChatInputHint": "رسالة…",
+  "filterTitle": "فلاتر الخريطة",
+  "filterApplied": "عرض {count} مواقع مواقف",
+  "@filterApplied": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "notificationsTitle": "الإشعارات",
+  "notificationsMarkAllRead": "تعليم الكل كمقروء",
+  "notificationsEmpty": "لا إشعارات بعد",
+  "searchNearMe": "استخدم موقعي",
+  "searchNearMeHint": "ترتيب المواقف حسب بعدك",
+  "locationFound": "تم التمركز على موقعك",
+  "locationUnavailable": "الموقع غير متاح — فعّل GPS واسمح لبارکو من الإعدادات",
+  "searchSelected": "البحث قرب {place}",
+  "@searchSelected": {
+    "placeholders": { "place": { "type": "String" } }
+  },
+  "marketplacePhotoAdded": "تمت إضافة الصورة للتحقق (تجربة)",
+  "marketplaceChangePhoto": "تغيير الصورة",
+  "legendAvailable": "متاح",
+  "legendLimited": "محدود",
+  "legendFull": "ممتلئ",
+  "lotDistanceKm": "على بعد {km} كم",
+  "@lotDistanceKm": {
+    "placeholders": { "km": { "type": "String" } }
+  },
+  "reviewSectionTitle": "قيّم هذا الموقف",
+  "reviewSectionHint": "شارك تجربتك — 10 نقاط بارکو مرة واحدة يومياً لكل موقف.",
+  "reviewCommentHint": "تعليق اختياري",
+  "reviewSubmit": "إرسال التقييم",
+  "reviewSubmitted": "شكراً! التقييم الجديد {rating} ★ ({count} مراجعة) · +{points} نقطة",
+  "@reviewSubmitted": {
+    "placeholders": {
+      "rating": { "type": "String" },
+      "count": { "type": "int" },
+      "points": { "type": "int" }
+    }
+  },
+  "reviewAlreadyToday": "قيّمت هذا الموقف اليوم مسبقاً.",
+  "reviewFailed": "تعذر إرسال التقييم. حاول مرة أخرى.",
+  "helpTitle": "المساعدة والأسئلة",
+  "helpIntro": "إجابات سريعة عن بارکو في الكويت — المواقف والمحفظة والولاء.",
+  "helpFaq1Q": "كيف أدفع عن المواقف؟",
+  "helpFaq1A": "اختر موقفاً على الخريطة، اضغط ادفع الآن، وأكد من محفظة بارکو. اشحن الرصيد من المحفظة عند الحاجة.",
+  "helpFaq2Q": "ما هي نقاط بارکو؟",
+  "helpFaq2A": "اكسب نقاطاً عند الدفع، التسجيل اليومي، وتقييم المواقف. استبدل 100 نقطة بـ 5 د.ك رصيد في الولاء.",
+  "helpFaq3Q": "هل يمكن الحجز مسبقاً؟",
+  "helpFaq3A": "نعم — افتح الموقف واضغط احجز. الحجوزات القادمة في مواقفي.",
+  "helpFaq4Q": "لماذا الخريطة OpenStreetMap؟",
+  "helpFaq4A": "بارکو يستخدم OSM افتراضياً دون حساب فوترة Google. خرائط Google اختيارية عبر scripts/setup_google_maps_key.sh.",
+  "helpFaq5Q": "كيف يعمل مشاركة المواقف والأصدقاء؟",
+  "helpFaq5A": "غادر مبكراً لمشاركة موقفك، شاهد الأصدقاء القريبين، وأدرج ممراً خاصاً في السوق.",
+  "helpContactTitle": "تواصل مع الدعم",
+  "helpContactEmail": "support@parko.kw",
+  "favoritesTitle": "المواقف المحفوظة",
+  "favoritesEmpty": "اضغط النجمة على موقف في الخريطة لحفظه هنا.",
+  "favoritesAdded": "تم حفظ الموقف",
+  "favoritesRemoved": "تمت الإزالة من المحفوظة",
+  "favoritesSavedOn": "حُفظ في {date}",
+  "@favoritesSavedOn": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "homeActiveSession": "موقف نشط · {lotName}",
+  "@homeActiveSession": {
+    "placeholders": { "lotName": { "type": "String" } }
+  },
+  "authOtpSent": "تم إرسال رمز التحقق",
+  "authOtpHint": "رمز من 6 أرقام",
+  "authOtpVerify": "تحقق ومتابعة",
+  "authOtpInvalid": "رمز غير صحيح. الرمز التجريبي: 123456",
+  "authOtpExpired": "انتهت صلاحية الرمز — اطلب رمزاً جديداً",
+  "authDemoCodeHint": "رمز تجريبي: 123456",
+  "authChangePhone": "تغيير رقم الهاتف",
+  "searchRecentTitle": "الأخيرة",
+  "searchRecentClear": "مسح",
+  "searchPopularTitle": "الأكثر بحثاً في الكويت",
+  "sessionEnded": "انتهت جلسة المواقف",
+  "sessionExtend30": "+30 دقيقة",
+  "sessionExtended": "تم تمديد الجلسة {minutes} دقيقة",
+  "@sessionExtended": {
+    "placeholders": { "minutes": { "type": "int" } }
+  },
+  "homeRefreshed": "تم تحديث بيانات الخريطة",
+  "settingsProfileSynced": "تم حفظ الملف ومزامنته مع بارکو",
+  "authWelcomeBonus": "أهلاً! {kwd} د.ك في المحفظة + {points} نقطة بارکو",
+  "@authWelcomeBonus": {
+    "placeholders": {
+      "kwd": { "type": "String" },
+      "points": { "type": "int" }
+    }
+  },
+  "filterQuickAll": "الكل",
+  "filterQuickFree": "مجاني",
+  "filterQuickValet": "فاليه",
+  "filterQuickReserve": "قابل للحجز",
+  "receiptTitle": "إيصال المواقف",
+  "receiptDuration": "مدة الوقوف",
+  "receiptPaid": "المدفوع",
+  "receiptPoints": "نقاط بارکو",
+  "receiptPointsEarned": "+{points} نقطة",
+  "@receiptPointsEarned": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "receiptViewHistory": "عرض السجل",
+  "historyTypeSession": "جلسة مباشرة",
+  "historyTypeReservation": "حجز",
+  "historyWhen": "الوقت",
+  "historyShowOnMap": "عرض على الخريطة",
+  "homeCheckInPrompt": "تسجيل يومي متاح — +5 نقاط بارکو",
+  "reminderScheduled": "تم ضبط تذكير قبل 15 دقيقة من الموعد",
+  "mapLoadErrorTitle": "تعذر تحميل الخريطة",
+  "mapLoadErrorConnection": "لا يمكن الوصول إلى خادم بارکو. شغّل الـ backend أو سيُستخدم الوضع التجريبي.",
+  "mapLoadErrorGeneric": "حدث خطأ أثناء تحميل بيانات المواقف.",
+  "mapLoadErrorApiHint": "الواجهة: {url}",
+  "@mapLoadErrorApiHint": {
+    "placeholders": { "url": { "type": "String" } }
+  },
+  "mapRetry": "إعادة المحاولة",
+  "mapOfflineFallback": "خريطة تجريبية — شغّل الخادم للبيانات الحية",
+  "mapNoLotsMatch": "لا توجد مواقف تطابق الفلاتر",
+  "apiStatusLive": "متصل",
+  "apiStatusDemo": "تجريبي",
+  "apiStatusOffline": "غير متصل",
+  "parkingStatsVisits": "{count} زيارة",
+  "@parkingStatsVisits": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "parkingStatsSpent": "إجمالي {amount} د.ك",
+  "@parkingStatsSpent": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "signUpPhoneSubtitle": "أدخل بياناتك ثم تحقق من رقم جوالك الكويتي برمز لمرة واحدة.",
+  "signUpVerifyPhone": "متابعة التحقق بالهاتف",
+  "signUpContinueOtp": "أدخل الرمز المرسل إلى جوالك لإكمال التسجيل.",
+  "emailHintOptional": "البريد (اختياري)",
+  "signUpPrompt": "جديد في بارکو؟",
+  "mapLayersTitle": "طبقات الخريطة",
+  "mapLayersOverlays": "الطبقات",
+  "mapLayersSharedSpots": "مواقف مشتركة",
+  "mapLayersPrivateSpots": "كراجات خاصة",
+  "mapLayersStyle": "نمط الخريطة",
+  "mapLayersNormal": "عادية",
+  "mapLayersSatellite": "قمر صناعي",
+  "shareLot": "مشاركة الموقف",
+  "shareLotMessage": "موقف {name} على بارکو — {spots} · {price}\nhttps://maps.google.com/?q={lat},{lng}",
+  "@shareLotMessage": {
+    "placeholders": {
+      "name": { "type": "String" },
+      "spots": { "type": "String" },
+      "price": { "type": "String" },
+      "lat": { "type": "double" },
+      "lng": { "type": "double" }
+    }
+  },
+  "settingsMemberSince": "عضو منذ {date}",
+  "@settingsMemberSince": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "settingsUserId": "معرف الحساب: {id}",
+  "@settingsUserId": {
+    "placeholders": { "id": { "type": "String" } }
+  },
+  "buddyChatEmpty": "راسِل زميلك لتنسيق الموقف",
+  "mapTilesOfflineHint": "خلفية الخريطة تحتاج إنترنت — العلامات ما زالت تعمل",
+  "settingsCopyId": "نسخ معرف الحساب",
+  "settingsIdCopied": "تم نسخ معرف الحساب",
+  "searchLotsTitle": "مواقف السيارات",
+  "searchLotSubtitle": "{spots} · {price}",
+  "@searchLotSubtitle": {
+    "placeholders": {
+      "spots": { "type": "String" },
+      "price": { "type": "String" }
+    }
+  },
+  "searchNoResults": "لا توجد وجهات أو مواقف مطابقة",
+  "drawerWalletBalance": "{amount} د.ك",
+  "@drawerWalletBalance": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "drawerPointsBalance": "{points} نقطة",
+  "@drawerPointsBalance": {
+    "placeholders": { "points": { "type": "int" } }
+  },
+  "notificationsClearRead": "مسح المقروء",
+  "notificationsClearedRead": "تم مسح الإشعارات المقروءة",
+  "walletTopUpCustomTitle": "شحن مخصص",
+  "walletTopUpCustomLabel": "المبلغ",
+  "walletTopUpConfirm": "إضافة رصيد",
+  "walletTopUpInvalid": "أدخل مبلغاً بين 1 و 500 د.ك",
+  "homeFavoritesTitle": "مواقف محفوظة",
+  "homeFavoritesSeeAll": "عرض الكل",
+  "lotHours": "الساعات: {hours}",
+  "@lotHours": {
+    "placeholders": { "hours": { "type": "String" } }
+  },
+  "reserveWalletBalance": "رصيد المحفظة: {amount} د.ك",
+  "@reserveWalletBalance": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "reservePayFromWallet": "الدفع من المحفظة الآن",
+  "reservePayFromWalletHint": "حجز الموقف — يُخصم المبلغ فوراً",
+  "notificationsFilterAll": "الكل",
+  "notificationsFilterReserve": "حجوزات",
+  "notificationsFilterWallet": "المحفظة",
+  "notificationsFilterShare": "مشاركة",
+  "loyaltyRedeemConfirmBody": "سيتم تحويل ١٠٠ نقطة إلى ٥ د.ك رصيد مواقف في المحفظة.",
+  "reserveCancelledRefund": "تم الإلغاء · استرداد {amount} د.ك للمحفظة",
+  "@reserveCancelledRefund": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "historyFilterAll": "الكل",
+  "historyFilterSessions": "مباشر",
+  "historyFilterReservations": "حجوزات",
+  "helpFaq6Q": "هل أسترد المبلغ عند إلغاء الحجز؟",
+  "helpFaq6A": "إذا دفعت من محفظة بارکو عند الحجز، يُعاد المبلغ تلقائياً عند الإلغاء قبل وقت البدء.",
+  "reserveCancelConfirmRefund": "إلغاء الحجز؟ سيتم استرداد {amount} د.ك إلى محفظتك.",
+  "@reserveCancelConfirmRefund": {
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "reserveCancelConfirmNoRefund": "إلغاء الحجز؟ الاسترداد للمحفظة متاح فقط قبل وقت البدء.",
+  "reserveCancelledNoRefund": "تم الإلغاء (لا استرداد — انتهى وقت البدء أو لم يُدفع من المحفظة).",
+  "settingsTheme": "المظهر",
+  "settingsThemeSystem": "حسب النظام",
+  "settingsThemeLight": "فاتح",
+  "settingsThemeDark": "داكن"
+}
+

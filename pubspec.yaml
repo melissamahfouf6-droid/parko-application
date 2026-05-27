@@ -1,0 +1,54 @@
+name: parko
+description: Parko (بارکو) - Smart parking solution for Kuwait.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State + routing
+  flutter_riverpod: ^2.6.1
+  go_router: ^14.2.0
+
+  # Maps + location (Flutter 3.19 / Dart 3.3: keep maps below 2.7)
+  google_maps_flutter: ^2.6.1
+  # Free map tiles (no API key / no billing) — used when Google Maps key is not set
+  flutter_map: ^6.1.0
+  latlong2: ^0.9.1
+  geolocator: ^12.0.0
+  geocoding: ^3.0.0
+  permission_handler: ^11.3.1
+  url_launcher: ^6.3.0
+  share_plus: ^7.2.2
+
+  # Networking + storage
+  dio: ^5.7.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  shared_preferences: ^2.2.3
+  image_picker: ^1.0.8
+  flutter_local_notifications: ^17.2.4
+  timezone: ^0.9.4
+
+  # Pinned by flutter_localizations; explicit so analyzer sees the dependency for generated l10n.
+  intl: 0.18.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.9
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+

@@ -1,0 +1,33 @@
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Flutter/Dart
+flutter_*.png
+linked_*.ds
+unlinked.ds
+unlinked_spec.ds
+
+# Android
+**/android/.gradle/
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+
+# iOS
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/Secrets.xcconfig
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# Xcode user-specific
+**/*.xcuserstate
+**/xcuserdata/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.log
+

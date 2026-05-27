@@ -1,0 +1,5 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+// Google Maps iOS: default placeholder; override in gitignored Secrets.xcconfig (see Secrets.xcconfig.example).
+GOOGLE_MAPS_API_KEY=YOUR_IOS_MAPS_API_KEY
+#include? "Secrets.xcconfig"
