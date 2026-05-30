@@ -34,7 +34,7 @@ jobs:
         uses: azure/setup-kubectl@v4
 
       - name: Setup kustomize
-        uses: imahjoub/install-kustomize@v1.2.0
+        uses: azure/setup-kustomize@v1
 
       - name: Configure kubeconfig
         env:
