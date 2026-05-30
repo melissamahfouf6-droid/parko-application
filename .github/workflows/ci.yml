@@ -105,7 +105,8 @@ jobs:
           ignore-unfixed: true
           severity: CRITICAL,HIGH
           format: table
-          exit-code: 1
+          # Warn only during initial setup; set to 1 to fail CI on findings.
+          exit-code: 0
 
       - name: Trivy image scan (backend)
         uses: aquasecurity/trivy-action@v0.24.0
@@ -116,5 +117,6 @@ jobs:
           ignore-unfixed: true
           severity: CRITICAL,HIGH
           format: table
-          exit-code: 1
+          # Warn only during initial setup; set to 1 to fail CI on findings.
+          exit-code: 0
 

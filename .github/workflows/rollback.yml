@@ -34,7 +34,9 @@ jobs:
         uses: azure/setup-kubectl@v4
 
       - name: Setup kustomize
-        uses: azure/setup-kustomize@v1
+        run: |
+          curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
+          sudo mv kustomize /usr/local/bin/
 
       - name: Configure kubeconfig
         env:
